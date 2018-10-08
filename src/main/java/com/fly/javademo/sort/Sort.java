@@ -2,7 +2,11 @@ package com.fly.javademo.sort;
 
 import java.util.Arrays;
 import java.util.Random;
-
+/**
+ * https://www.cnblogs.com/onepixel/articles/7674659.html
+ * @author fly
+ *2018年10月8日 下午6:36:03
+ */
 public class Sort {
 	
 	public static void swap(int[] args,int a,int b){
@@ -19,6 +23,19 @@ public class Sort {
 					swap(args, i, j);
 				}
 			}
+		}
+		
+	}
+	
+	public static void selectSort(int[] args){
+		for(int i=0;i<args.length;i++){
+			int min=i;
+			for(int j=i+1;j<args.length;j++){
+				if(args[j]<args[min]){
+					min=j;
+				}
+			}
+			swap(args,i,min);
 		}
 		
 	}
@@ -42,7 +59,7 @@ public class Sort {
 	public static void main(String[] args) {
 		int[] a=buildArgs(10);
 		System.out.println(Arrays.toString(a));
-		maopaoSort(a);
+		selectSort(a);
 		System.out.println(Arrays.toString(a));
 	}
 
