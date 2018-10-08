@@ -39,6 +39,19 @@ public class Sort {
 		}
 		
 	}
+	public static void insertSort(int[] args){
+		
+		for(int i=1;i<args.length;i++){
+			int current=args[i];
+			int preIndex=i-1;
+			while(preIndex>=0&&args[preIndex]>current){
+				args[preIndex+1]=args[preIndex];
+				preIndex--;
+			}
+			args[preIndex+1]=current;
+		}
+		
+	}
 	
 	public static int[] buildArgs(int length){
 		Random r=new Random();
@@ -59,7 +72,7 @@ public class Sort {
 	public static void main(String[] args) {
 		int[] a=buildArgs(10);
 		System.out.println(Arrays.toString(a));
-		selectSort(a);
+		insertSort(a);
 		System.out.println(Arrays.toString(a));
 	}
 
