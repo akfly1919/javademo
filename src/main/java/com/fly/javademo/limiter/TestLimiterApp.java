@@ -6,8 +6,8 @@ public class TestLimiterApp {
 	public static void main(String[] args) throws InterruptedException {
         // 获取限速器
 //        final RateLimiter rateLimiter = new CounterLimiter(10);
-//        final RateLimiter rateLimiter = new LeakyBucketLimiter(10);
-        final RateLimiter rateLimiter = new TokenBucketLimiter(10);
+        final RateLimiter rateLimiter = new LeakyBucketLimiter(10);
+//        final RateLimiter rateLimiter = new TokenBucketLimiter(10);
 //        final com.google.common.util.concurrent.RateLimiter rateLimiter =
 //                com.google.common.util.concurrent.RateLimiter.create(10);
 
