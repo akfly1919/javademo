@@ -3,7 +3,7 @@ package com.fly.javademo.leecode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestLeeCode {
+public class LeeCode10 {
 
 	public int[] twoSum(int[] nums, int target) {
 		Map<Integer, Integer> map = new HashMap<Integer, Integer>();
@@ -36,32 +36,37 @@ public class TestLeeCode {
 		return ln;
 	}
 
-	public static int lengthOfLongestSubstring(String s) {
+	public int lengthOfLongestSubstring(String s) {
 		if(s==null||s.length()==0){
 			return 0;
 		}
 		if(s.length()==1){
 			return 1;
 		}
-		String a="";
+		Map<Character,Integer> map=new HashMap<Character,Integer>();
+		int ans=0;
+		for(int i=0,j=0;i<s.length();i++){
+			char a=s.charAt(i);
+			if(map.containsKey(a)){
+				j=Math.max(map.get(a),j);
+			}
+			map.put(a, i+1);
+			ans = Math.max(i - j + 1,ans);
+		}
+		return ans;
+	}
+	
+	public String longestPalindrome(String s) {
+		String d="";
+		Map<Character,Integer> map=new HashMap<Character,Integer>();
 		for(int i=0;i<s.length();i++){
-			for(int j=i+1;j<s.length();j++){
-				String d=s.substring(i, j);
-				if(d.contains(s.charAt(j)+"")){
-					if(d.length()>=a.length()){
-						a=d;
-					}
-					break;
-				}else{
-					if(d.length()>=a.length()){
-						a=d+s.charAt(j);
-					}
-				}
+			int j=s.indexOf(s.charAt(i),i);
+			if(j!=-1){
 			}
 		}
-		return a.length();
-	}
+        return d;
+    }
 	public static void main(String[] args){
-		System.out.println(lengthOfLongestSubstring("aab"));
+		System.out.println("aaaaa".indexOf("a",1));
 	}
 }
